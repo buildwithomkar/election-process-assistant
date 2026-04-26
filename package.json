@@ -1,12 +1,20 @@
 {
-  "name": "election-process-assistant",
-  "version": "1.0.0",
-  "description": "Aesthetic Indian Election Assistant",
+  "name": "civicguide-election-assistant",
+  "version": "2.0.0",
+  "description": "Premium AI-driven Indian Election Assistant for Lok Sabha 2024",
   "main": "index.html",
   "scripts": {
     "start": "npx -y serve .",
-    "dev": "npx -y serve ."
+    "test": "echo 'Run CivicTest.runAll() in browser console for real-time validation' && exit 0"
   },
+  "keywords": [
+    "election",
+    "india",
+    "gemini-ai",
+    "google-cloud"
+  ],
+  "author": "CivicGuide Team",
+  "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "serve": "^14.2.1"
