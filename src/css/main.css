@@ -1,0 +1,301 @@
+:root {
+    /* Aesthetic Color Palette - Modern Matte */
+    --bg-main: #0A0A0B;
+    --bg-surface: #141416;
+    --bg-card: #1C1C1E;
+    --primary-indigo: #6366F1;
+    --accent-yellow: #FACC15;
+    --accent-emerald: #10B981;
+    --text-primary: #FFFFFF;
+    --text-secondary: #94A3B8;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    
+    /* Typography & Spacing */
+    --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    --radius-lg: 24px;
+    --radius-md: 16px;
+    --radius-sm: 12px;
+    
+    /* Shadows - Soft & Deep */
+    --shadow-aesthetic: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.app-container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+}
+
+/* Minimal Sidebar */
+.sidebar {
+    background-color: var(--bg-surface);
+    border-right: 1px solid var(--border-subtle);
+    padding: 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 3.5rem;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.logo-icon {
+    width: 32px;
+    height: 32px;
+    background: var(--primary-indigo);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.875rem 1.25rem;
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.nav-link.active {
+    color: var(--text-primary);
+    background: rgba(99, 102, 241, 0.1);
+    box-shadow: inset 0 0 0 1px rgba(99, 102, 241, 0.2);
+}
+
+/* Main Aesthetic Content */
+.main-content {
+    padding: 3rem 4rem;
+    overflow-y: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.header-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    margin-top: 0.5rem;
+}
+
+/* Bento Grid Layout */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(180px, auto);
+    gap: 1.5rem;
+}
+
+.bento-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.bento-item:hover {
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+.bento-item.large {
+    grid-column: span 2;
+}
+
+.bento-item.tall {
+    grid-row: span 2;
+}
+
+/* Aesthetic Components */
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 1rem;
+    display: block;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+/* Timeline Minimal */
+.timeline-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.timeline-step {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.step-info h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.25rem;
+}
+
+.step-info p {
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+}
+
+/* Aesthetic Chat Assistant */
+.chat-widget {
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    width: 400px;
+    height: 600px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-aesthetic);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1000;
+    display: none;
+}
+
+.chat-header {
+    padding: 1.5rem;
+    background: var(--bg-surface);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+}
+
+.message {
+    margin-bottom: 1rem;
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-md);
+    font-size: 0.9375rem;
+    max-width: 85%;
+}
+
+.message.assistant {
+    background: var(--bg-surface);
+    border-bottom-left-radius: 4px;
+}
+
+.message.user {
+    background: var(--primary-indigo);
+    color: #fff;
+    margin-left: auto;
+    border-bottom-right-radius: 4px;
+}
+
+.chat-input-area {
+    padding: 1.25rem;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.chat-input-area input {
+    width: 100%;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    padding: 0.875rem 1.25rem;
+    border-radius: var(--radius-sm);
+    color: #fff;
+    outline: none;
+}
+
+.chat-trigger {
+    position: fixed;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    width: 64px;
+    height: 64px;
+    background: var(--primary-indigo);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.4);
+    z-index: 1001;
+    transition: transform 0.2s ease;
+}
+
+.chat-trigger:hover {
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.animate-up {
+    animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

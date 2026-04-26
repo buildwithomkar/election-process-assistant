@@ -1,0 +1,14 @@
+{
+  "name": "election-process-assistant",
+  "version": "1.0.0",
+  "description": "Aesthetic Indian Election Assistant",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx -y serve .",
+    "dev": "npx -y serve ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}
