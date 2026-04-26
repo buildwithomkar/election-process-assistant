@@ -1,7 +1,7 @@
 .git
 .gitignore
 node_modules
-Dockerfile
+# Dockerfile (removed so it is used for deployment)
 .gcloudignore
 package.json
 package-lock.json
