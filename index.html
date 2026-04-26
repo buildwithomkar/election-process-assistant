@@ -10,6 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/css/main.css">
     <link rel="stylesheet" href="src/css/animations.css">
+    <!-- Google Translate Support -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+        }
+    </script>
 </head>
 <body>
     <div class="app-container">
@@ -43,12 +50,15 @@
 
         <!-- Aesthetic Main Content -->
         <main class="main-content" role="main">
-            <header class="animate-up">
+            <header class="animate-up" style="display: flex; justify-content: space-between; align-items: flex-start;">
                 <div>
                     <h1>Lok Sabha 2024</h1>
                     <p class="header-subtitle">Your gateway to the world's largest election.</p>
                 </div>
-                <button id="btn-register" aria-label="Register as a new voter" style="background: var(--primary-indigo); color: #fff; border: none; padding: 0.75rem 1.5rem; border-radius: var(--radius-sm); font-weight: 600; cursor: pointer;">Register Now</button>
+                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 1rem;">
+                    <div id="google_translate_element"></div>
+                    <button id="btn-register" aria-label="Register as a new voter" style="background: var(--primary-indigo); color: #fff; border: none; padding: 0.75rem 1.5rem; border-radius: var(--radius-sm); font-weight: 600; cursor: pointer;">Register Now</button>
+                </div>
             </header>
 
             <section id="content-area" aria-live="polite">

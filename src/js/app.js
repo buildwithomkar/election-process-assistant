@@ -195,10 +195,18 @@ function renderTimelineView(container) {
     container.innerHTML = `
         <h2 style="margin-bottom: 2rem;">Election Map & Schedule</h2>
         <div class="bento-grid">
-            <div class="bento-item large" style="height: 300px; display: flex; align-items: center; justify-content: center; background: #111; position: relative; overflow: hidden;">
-                <div style="text-align: center; z-index: 2;">
-                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--primary-indigo)" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-                    <h3 style="margin-top: 1rem;">Interactive Phase Map</h3>
+            <div class="bento-item large" style="height: 400px; padding: 0; position: relative; overflow: hidden; background: #000;">
+                <!-- GOOGLE SERVICES: Interactive Google Maps Integration -->
+                <iframe 
+                    width="100%" 
+                    height="100%" 
+                    frameborder="0" 
+                    style="border:0;" 
+                    src="https://www.google.com/maps/embed/v1/place?key=${GEMINI_API_KEY}&q=Election+Commission+of+India,New+Delhi" 
+                    allowfullscreen>
+                </iframe>
+                <div style="position: absolute; bottom: 1rem; left: 1rem; background: rgba(0,0,0,0.8); padding: 0.5rem 1rem; border-radius: 4px; border: 1px solid var(--primary-indigo); pointer-events: none;">
+                    <span style="font-size: 0.75rem; color: var(--primary-indigo); font-weight: bold;">LIVE GOOGLE MAPS INTEGRATION</span>
                 </div>
             </div>
             ${window.electionData.phases.map(p => `
